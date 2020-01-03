@@ -96,7 +96,7 @@ ignore:
 theme: cactus
 
 theme_config:
-        colorscheme: light
+        colorscheme: white
 
 
 # Deployment
