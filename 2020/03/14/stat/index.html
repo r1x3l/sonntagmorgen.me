@@ -13,8 +13,8 @@
 <meta property="og:site_name" content="sonntagmorgen.me">
 <meta property="og:description" content="var xmlhttp &#x3D; new XMLHttpRequest(); xmlhttp.onreadystatechange &#x3D; function() {   if (this.readyState &#x3D;&#x3D; 4 &amp;&amp; this.status &#x3D;&#x3D; 200) {     var myObj &#x3D; JSON.parse(this.responseText);     document.getEl">
 <meta property="og:locale" content="de_DE">
-<meta property="article:published_time" content="2020-03-14T22:32:21.227Z">
-<meta property="article:modified_time" content="2020-03-14T22:32:21.227Z">
+<meta property="article:published_time" content="2020-03-14T22:40:09.838Z">
+<meta property="article:modified_time" content="2020-03-14T22:40:09.838Z">
 <meta property="article:author" content="Alexander Hetzl">
 <meta name="twitter:card" content="summary">
     
@@ -129,7 +129,7 @@
       
     <div class="postdate">
       
-        <time datetime="2020-03-14T22:32:21.227Z" itemprop="datePublished">2020-03-14</time>
+        <time datetime="2020-03-14T22:40:09.838Z" itemprop="datePublished">2020-03-14</time>
         
       
     </div>
@@ -154,9 +154,9 @@ xmlhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     var myObj = JSON.parse(this.responseText);
     document.getElementById("country").innerHTML = myObj.features[0].attributes.Country_Region;
-    document.getElementById("confirmed").innerHTML = myObj.features[0].attributes.Confirmed + ' / ';
-    document.getElementById("active").innerHTML = myObj.features[0].attributes.Active + ' / ';
-    document.getElementById("death").innerHTML = myObj.features[0].attributes.Deaths;
+    document.getElementById("confirmed").innerHTML = 'Confirmed: ' + myObj.features[0].attributes.Confirmed + ' / ';
+    document.getElementById("active").innerHTML = 'Active: ' + myObj.features[0].attributes.Active + ' / ';
+    document.getElementById("death").innerHTML = 'Deaths: ' + myObj.features[0].attributes.Deaths;
   }
 };
 xmlhttp.open("GET", "https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/1/query?f=json&where=(Confirmed%20%3E%200)%20AND%20(Deaths%3E0)%20AND%20(Country_Region=%27Austria%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=Deaths%20desc,Country_Region%20asc,Province_State%20asc&outSR=102100&resultOffset=0&resultRecordCount=250&cacheHint=true", true);
